@@ -15,7 +15,7 @@ from .utils import backend_class
 class job:  # noqa
     queue_class = Queue
 
-    def __init__(self, queue: 'Queue', connection: t.Optional['Redis'] = None, timeout=None,
+    def __init__(self, queue: 'Queue' = 'default', connection: t.Optional['Redis'] = None, timeout=None,
                  result_ttl=DEFAULT_RESULT_TTL, ttl=None,
                  queue_class=None, depends_on: t.Optional[t.List[t.Any]] = None, at_front: t.Optional[bool] = None,
                  meta=None, description=None, failure_ttl=None, retry: t.Optional['Retry'] = None, on_failure=None,
