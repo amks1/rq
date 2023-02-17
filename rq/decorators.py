@@ -67,6 +67,7 @@ class job:  # noqa
             timeout = kwargs.pop('timeout', self.timeout)
             meta = kwargs.pop('meta', self.meta)
             result_ttl = kwargs.pop('result_ttl', self.result_ttl)
+            retry = kwargs.pop('retry', self.retry)
 
 
             if not depends_on:
@@ -88,7 +89,7 @@ class job:  # noqa
                 meta=meta,
                 description=self.description,
                 failure_ttl=self.failure_ttl,
-                retry=self.retry,
+                retry=retry,
                 on_failure=self.on_failure,
                 on_success=self.on_success,
             )
